@@ -1,0 +1,40 @@
+- Installation mariadb (client-serveur) (avec heidiSQL)
+- gestion sur windows :
+	- mysqld (ne peut pas être utilisé en même temps que mariadb sur ses VM)
+	- mysqladmin -u root -p shutdown
+	- mysql -u root -p
+	- sudo mysql -u root -p (sur linux)
+- gestion d'utilisateurs
+	- Create user 'user'@localhost identified by 'pwd'
+	- grand all privileges on 'db'.* to 'user'@localhost
+	- flush privileges
+	- drop 'user'@localhost
+	- alter user 'user'@localhost identified by 'pwd' 
+	- show grants
+	- select* from mysql.user
+
+- Gestion des tables
+	- Create database 'db'
+	- show databases
+	- use 'db'
+	- show tables
+
+Modifications de tables
+	- create 'table' {id INT PRIMARY KEY NOT NULL, nom VARCHAR(100)}
+	- insert into 'table' set (nom) values ('Robert')
+	- select 'c' from 'table' where ...
+	- update table set nom='Gilles' where id=2
+	- delete from 'table' where id=2
+	- drop table table
+
+les transactions
+
+Exporter une view 
+	- select * from table into outfile 'test.csv' fields enclosed by '"' terminated by ';' escaped by '"'
+lines terminated by '\r\n'
+
+importer/exporter un dump
+	- sudo mysql -u root -p node < dump.sql
+	- sudo mysql -u root -p node > dump.sql
+
+

